@@ -6,14 +6,14 @@
 #
 Name     : argparse
 Version  : 1.4.0
-Release  : 10
+Release  : 11
 URL      : http://pypi.debian.net/argparse/argparse-1.4.0.tar.gz
 Source0  : http://pypi.debian.net/argparse/argparse-1.4.0.tar.gz
-Source99 : https://pypi.python.org/packages/source/a/argparse/argparse-1.4.0.tar.gz.asc
+Source99 : http://pypi.debian.net/argparse/argparse-1.4.0.tar.gz.asc
 Summary  : Python command-line parsing library
 Group    : Development/Tools
 License  : Python-2.0
-Requires: argparse-python
+Requires: argparse-legacypython
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
@@ -44,12 +44,12 @@ interfaces.
         Compatibility
         -------------
 
-%package python
-Summary: python components for the argparse package.
+%package legacypython
+Summary: legacypython components for the argparse package.
 Group: Default
 
-%description python
-python components for the argparse package.
+%description legacypython
+legacypython components for the argparse package.
 
 
 %prep
@@ -60,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503071956
+export SOURCE_DATE_EPOCH=1504997891
 python2 setup.py build -b py2
 
 %install
@@ -70,6 +70,6 @@ python2 -tt setup.py build -b py2 install --root=%{buildroot}
 %files
 %defattr(-,root,root,-)
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
