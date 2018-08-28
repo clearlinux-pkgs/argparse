@@ -6,7 +6,7 @@
 #
 Name     : argparse
 Version  : 1.4.0
-Release  : 20
+Release  : 21
 URL      : http://pypi.debian.net/argparse/argparse-1.4.0.tar.gz
 Source0  : http://pypi.debian.net/argparse/argparse-1.4.0.tar.gz
 Source99 : http://pypi.debian.net/argparse/argparse-1.4.0.tar.gz.asc
@@ -14,11 +14,8 @@ Summary  : Python command-line parsing library
 Group    : Development/Tools
 License  : Python-2.0
 Requires: argparse-python
-BuildRequires : pbr
-BuildRequires : pip
-
-BuildRequires : python3-dev
-BuildRequires : setuptools
+BuildRequires : buildreq-distutils
+BuildRequires : buildreq-distutils3
 
 %description
 interfaces.
@@ -69,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1519398954
+export SOURCE_DATE_EPOCH=1535457822
 python2 setup.py build -b py2
 
 %install
